@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 1</title>
+</head>
+<body>
+    <h1>Laboratorio 1</h1>
+    
+    <button>Blue</button>
+    <button>Red</button>
+    <button>Green</button>
+    <button>Pink</button>
+    <div id="caja"></div>
+    <script>
+        let botonera = document.getElementsByTagName('button');
+        for (let i = 0; i < botonera.length; i++) 
+        {
+            botonera[i].onclick= function()
+            {
+                mostrarColores(botonera[i].innerText);
+            }
+            
+        }
+        function mostrarColores(color)
+        {
+            document.getElementById('caja').innerHTML= '<h2>el color es ' + color+ '</h2>';
+            document.getElementById('caja').style.background= color;
+        }
+
+    </script>
+</body>
+</html>

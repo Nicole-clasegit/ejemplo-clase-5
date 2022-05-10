@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Eventos y Funciones</title>
+</head>
+<body>
+    <button>C#.Net</button>
+    <button>Java</button>
+    <button>PHP</button>
+    <button>Javascript</button>
+    <button>Visual Basic</button>
+
+    <div id="curso"></div>
+
+    <script>
+        let botonera = document.getElementsByTagName('button');
+        console.log('Cantidad de botones= '+ botonera.length);
+
+        for (let i = 0; i < botonera.length; i++) 
+        {
+            botonera[i].onclick = function() 
+            {
+                //console.log('Le asignamos el valor = '+ botonera[i].innerText); 
+                mostrarCurso(botonera[i].innerText);   
+            }
+        }
+
+        function mostrarCurso(nombreCurso) {
+            document.getElementById('curso').innerHTML= '<h2>Curso elegido: ' + nombreCurso + '</h2>';
+        }
+    </script>
+</body>
+</html>

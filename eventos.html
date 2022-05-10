@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en JS</title>
+</head>
+<body onload="console.log('Evento onload de la pagina/documento')">
+    <h1 onmouseover="console.log('Me ubique encima del titulo h1')" >Eventos</h1>
+    <h2 onmousemove="console.log('Me muevo encima del titulo h2')">Eventos on</h2>
+    <p id="parrafo" onclick="clickParrafo('lightgray')" onmouseout="SalirParrafo('white')" onmouseover="fondoParrafo()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi reprehenderit repellat, impedit unde dolore distinctio error vero totam in laborum. Sed, praesentium! Natus ad temporibus voluptates facilis? Asperiores, laudantium voluptates?</p>
+    <button onclick="cambiarContenido('Nuevo contenido del parrafo', 'parrafo')">Cambiar contenido del parrafo</button>
+    <br>
+    <label>1° numero: <br>
+        <input type="number" name="n1" id="n1"> <br>
+    </label> <br>
+    <label>1° numero: <br>
+        <input type="number" name="n2" id="n2"> <br>
+    </label> <br>
+    <button onclick="cambiarContenido(sumar(n1.value, n2.value),'resultado')">SUMAR</button>
+    <div id="resultado">
+
+    </div>
+    <script>
+        function fondoParrafo() // cuando no de vuelve nada es un procedimiento (por ejemplo el alert)
+        {
+            document.getElementsByTagName('p')[0].style.backgroundColor= 'coral';   
+        }
+        function SalirParrafo(color) 
+        {
+            document.getElementsByTagName('p')[0].style.backgroundColor= color;   
+        }
+        function clickParrafo(color) 
+        {
+            document.getElementsByTagName('p')[0].style.backgroundColor= color;   
+        }
+        function cambiarContenido(nuevoContenido, elemento) 
+        {
+            document.getElementById(elemento).innerHTML= nuevoContenido
+        }
+        function sumar(n1,n2) // cuando retorna algo es una funcion(x ejemplo el prompt que vuelve un string)
+        {
+            let resultado= parseInt(n1)+ parseInt(n2);
+            return resultado;
+        }
+    </script>
+</body>
+</html>

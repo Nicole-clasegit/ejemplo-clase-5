@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio- ejericio 1</title>
+</head>
+<body>
+    <h1>Desafio Ej n°1</h1>
+    <p>Inficador de Ganancia: </p>
+    <div id="caja">
+
+    </div>
+    <script>
+        
+        var flujoCaja=[
+            {periodo:'Enero',ingreso:1500,egreso:1500},
+            {periodo:'Febreo',ingreso:2500,egreso:2500},
+            {periodo:'Marzo',ingreso:84683,egreso:1155},
+            {periodo:'Abril',ingreso:135353,egreso:1533},
+            {periodo:'Mayo',ingreso:1535/*1000000*/,egreso:/*5434*/10000000},
+            {periodo:'Junio',ingreso:4343354,egreso:5434534},
+            {periodo:'Julio',ingreso:435453,egreso:4543},
+            {periodo:'Agosto',ingreso:78351,egreso:7816},
+            {periodo:'Septiembre',ingreso:78351,egreso:7816},
+            {periodo:'Octubre',ingreso:48483,egreso:9433},
+            {periodo:'Noviembre',ingreso:35483,egreso:53133},
+            {periodo:'Diciembre',ingreso:3843,egreso:348133}
+        ];
+        let Ganancia;
+        ganancia= balance(flujoCaja);
+
+        document.getElementById('caja').innerText=ganancia;
+
+        function balance(flujo) 
+        {
+            let sumaIngresos=0;
+            let sumaEgresos=0;
+            let valor;
+            for( var i=0;i<flujo.length;i++)
+            {
+            sumaIngresos+=flujo[i].ingreso;
+            sumaEgresos+=flujo[i].egreso;
+            }
+            if (sumaIngresos > sumaEgresos) {
+                valor=1;
+            } else if(sumaIngresos<sumaEgresos)
+                {
+                    valor=-1;
+                }
+            else
+            {
+                valor=0;
+            }
+            
+            
+            return valor;
+        }
+    </script>
+</body>
+</html>

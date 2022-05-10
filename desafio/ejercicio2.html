@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio- ejericio n°2</title>
+</head>
+<html>
+<body>
+    <div id="contenedor">
+        
+    </div>
+    <script>
+        var OfertasConInteres= [];
+        var creditos=[
+            {Nombre: 'Plan 001', Capital:150000,Plazo:30,Tasa:0.15},
+            {Nombre: 'Plan 002', Capital:300000,Plazo:180,Tasa:0.1},
+            {Nombre: 'Plan 003', Capital:485000,Plazo:60,Tasa:0.23},
+            {Nombre: 'Plan 004', Capital:200000,Plazo:15,Tasa:0.20}
+        ];
+
+        let arregloNuevo= agregarInteres(creditos);
+
+        console.log(arregloNuevo);
+    
+
+        function agregarInteres(creditos) 
+        {
+            for (let i = 0; i < creditos.length; i++)
+            {
+            var interes=(creditos[i].Capital* creditos[i].Plazo*creditos[i].Tasa)/100;
+            OfertasConInteres.push({
+                nombre:creditos[i].Nombre,
+                Capital:creditos[i].Capital,
+                Plazo:creditos[i].Plazo,
+                Tasa:creditos[i].Tasa,
+                intereses:interes
+            });
+            }
+            return OfertasConInteres;
+        }
+    </script>
+</body>
+</html>
